@@ -1,0 +1,308 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding: 48px 24px 80px;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── Token entry ──────────────────────────────────────────────── */
+.tokenEntry {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 64px 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tokenEntry h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+}
+
+.tokenEntry p {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.tokenRow {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.tokenRow input {
+  flex: 1;
+  padding: 14px 18px;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  transition: all var(--transition);
+}
+
+.tokenRow input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.tokenRow input::placeholder { color: var(--text-muted); }
+
+.tokenRow button {
+  padding: 14px 22px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  white-space: nowrap;
+}
+
+.tokenRow button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ── Loading & Error ──────────────────────────────────────────── */
+.loadingState, .errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 100px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.errorIcon { font-size: 52px; }
+.errorState h2 { font-size: 24px; font-weight: 700; color: var(--text-primary); }
+.errorState p  { font-size: 15px; color: var(--text-secondary); }
+
+.btnBack {
+  padding: 12px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.btnBack:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-hover);
+}
+
+/* ── File View ────────────────────────────────────────────────── */
+.fileView {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fileHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.fileIconLg { font-size: 48px; flex-shrink: 0; }
+
+.fileMeta { display: flex; flex-direction: column; gap: 10px; }
+
+.fileName {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.fileTags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--text-muted);
+}
+
+/* ── Player ───────────────────────────────────────────────────── */
+.playerWrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoPlayer {
+  width: 100%;
+  max-height: 520px;
+  display: block;
+  background: #000;
+}
+
+.audioWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 60px 32px;
+  width: 100%;
+}
+
+.audioArt { font-size: 72px; }
+
+.audioTitle {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.audioPlayer { width: 100%; max-width: 500px; }
+
+.imagePreview {
+  max-width: 100%;
+  max-height: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+.noPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px 24px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.noPreviewIcon { font-size: 64px; }
+
+/* ── Actions ──────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btnDownload {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 24px;
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-bounce);
+  box-shadow: var(--shadow-accent);
+}
+
+.btnDownload:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btnTelegram {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 24px;
+  background: #2ca5e0;
+  color: white;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-bounce);
+}
+
+.btnTelegram:hover {
+  background: #1a9ad0;
+  transform: translateY(-2px);
+}
+
+.btnCopy {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 24px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btnCopy:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-hover);
+}
+
+@media (max-width: 600px) {
+  .tokenEntry { padding: 40px 20px; }
+  .tokenRow { flex-direction: column; }
+  .fileHeader { flex-direction: column; align-items: flex-start; }
+  .actions { flex-direction: column; }
+  .btnDownload, .btnTelegram, .btnCopy { justify-content: center; }
+}
