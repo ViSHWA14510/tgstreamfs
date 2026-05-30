@@ -4,16 +4,16 @@
   "devCommand": "next dev",
   "installCommand": "npm install",
   "env": {
-    "BOT_BACKEND_URL": "YOUR_BOT_BACKEND_URL_HERE"
+    "BOT_BACKEND_URL": "https://yourapp.up.railway.app"
   },
   "rewrites": [
     {
       "source": "/api/stream/:token",
-      "destination": "https://YOUR_BOT_BACKEND_URL_HERE/watch/:token"
+      "destination": "https://yourapp.up.railway.app/watch/:token"
     },
     {
       "source": "/api/download/:token",
-      "destination": "https://YOUR_BOT_BACKEND_URL_HERE/download/:token"
+      "destination": "https://yourapp.up.railway.app/download/:token"
     }
   ]
 }
